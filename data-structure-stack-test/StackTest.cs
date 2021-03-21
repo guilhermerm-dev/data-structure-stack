@@ -59,6 +59,25 @@ namespace data_structure_stack_test
         }
 
         [TestMethod]
+        public void ShouldContainStringInStackObject()
+        {
+            Stack<string> stack = new Stack<string>(10);
+            stack.Push("One");
+            stack.Push("Two");
+            stack.Push("Three");
+            Assert.AreEqual(stack.Contains("One"), true);
+        }
+
+        [TestMethod]
+        public void ShouldntContainStringInStackObject()
+        {
+            Stack<string> stack = new Stack<string>(10);
+            stack.Push("Two");
+            stack.Push("Three");
+            Assert.AreEqual(stack.Contains("One"), false);
+        }
+
+        [TestMethod]
         public void ShouldAddMaxLimitItemsInStackWithLength10AndRemoveAllThen()
         {
             int stackLength = 10;

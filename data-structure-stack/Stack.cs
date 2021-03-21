@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace data_structure_stack
 {
@@ -47,6 +48,11 @@ namespace data_structure_stack
         public bool IsEmpty()
         {
             return Top.Equals(InitialTopEmptyStack);
+        }
+
+        public bool Contains(T item)
+        {
+            return _items.Contains(item);
         }
     }
 }
