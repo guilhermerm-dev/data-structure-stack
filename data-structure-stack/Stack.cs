@@ -21,15 +21,19 @@ namespace data_structure_stack
             {
                 _items[++Top] = item;
             }
+            else
+            {
+                throw new IndexOutOfRangeException("It's not possible push items out of lenght stack range");
+            }
         }
 
-        public T Pop()
+        public void Pop()
         {
-            if (IsEmpty())
-                return default(T);
-
-            _items[Top] = default(T);
-            return _items[Top--];
+            if (!IsEmpty())
+            {
+                _items[Top] = default(T);
+                Top--;
+            }
         }
 
         public void PrintElements()
@@ -42,7 +46,7 @@ namespace data_structure_stack
 
         public bool IsEmpty()
         {
-            return Top.Equals(-1);
+            return Top.Equals(InitialTopEmptyStack);
         }
     }
 }
