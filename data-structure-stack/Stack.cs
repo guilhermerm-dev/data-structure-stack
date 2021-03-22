@@ -24,7 +24,7 @@ namespace data_structure_stack
             }
             else
             {
-                throw new IndexOutOfRangeException("It's not possible push items out of lenght stack range");
+                throw new IndexOutOfRangeException("It's not possible push items out of length stack range");
             }
         }
 
