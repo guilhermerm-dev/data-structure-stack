@@ -102,5 +102,23 @@ namespace data_structure_stack_test
                     stack.Push($"Item {i}");
             });
         }
+
+        [TestMethod]
+        public void shouldReturnTrueIfStackIsEmpty()
+        {
+            int stackLength = 10;
+            Stack<string> stack = new Stack<string>(stackLength);
+            Assert.AreEqual(stack.IsEmpty(), true);
+        }
+
+
+        [TestMethod]
+        public void shouldReturnFalseIfStackIsEmpty()
+        {
+            int stackLength = 10;
+            Stack<string> stack = new Stack<string>(stackLength);
+            stack.Push("One");
+            Assert.AreEqual(stack.IsEmpty(), false);
+        }
     }
 }
